@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/Users/yz/workspace/performance/MyLive/app/.cxx/Debug/37706zn4/arm64-v8a",
-  "command": "/Users/yz/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/yz/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yz/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dffmpeg_lib_EXPORTS -I/Users/yz/workspace/performance/MyLive/app/src/main/cpp/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC -o CMakeFiles/ffmpeg_lib.dir/ffmpeg-lib.cpp.o -c /Users/yz/workspace/performance/MyLive/app/src/main/cpp/ffmpeg-lib.cpp",
-  "file": "/Users/yz/workspace/performance/MyLive/app/src/main/cpp/ffmpeg-lib.cpp"
-}
-]
