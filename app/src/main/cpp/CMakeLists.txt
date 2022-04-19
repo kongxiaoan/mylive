@@ -7,12 +7,13 @@ file(GLOB allCpp *.cpp)
 #打印当前 cmakeLists 的路径
 message("当前cmakel路径: ${CMAKE_SOURCE_DIR} \n cpu架构：${CMAKE_ANDROID_ARCH_ABI}")
 
+message(allCpp = ${allCpp})
 add_library(
         ffmpeg_lib
 
         SHARED
 
-        ${allCpp})
+        ${allCpp} utils/utils.cpp)
 
 find_library(
         log-lib

@@ -1,0 +1,7 @@
+Executable : /Users/yz/Library/Android/sdk/cmake/3.18.1/bin/ninja
+arguments : 
+-C
+/Users/yz/workspace/performance/MyLive/app/.cxx/Debug/37706zn4/x86_64
+mylive
+jvmArgs : 
+

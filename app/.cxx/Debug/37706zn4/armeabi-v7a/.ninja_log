@@ -1,0 +1,17 @@
+# ninja log v5
+1	259	1650362232	CMakeFiles/ffmpeg_lib.dir/utils/utils.cpp.o	fd3ccffbe673bfe2
+0	723	1650362232	CMakeFiles/ffmpeg_lib.dir/ffmpeg-lib.cpp.o	31df7875f5637425
+0	734	1650362232	CMakeFiles/ffmpeg_lib.dir/version.cpp.o	d438d6ab1e915438
+2	733	1650362378	CMakeFiles/ffmpeg_lib.dir/version.cpp.o	d438d6ab1e915438
+733	817	1650362379	/Users/yz/workspace/performance/MyLive/app/build/intermediates/cxx/Debug/37706zn4/obj/armeabi-v7a/libffmpeg_lib.so	d8535fb23475f001
+1	717	1650362393	CMakeFiles/ffmpeg_lib.dir/version.cpp.o	d438d6ab1e915438
+717	800	1650362394	/Users/yz/workspace/performance/MyLive/app/build/intermediates/cxx/Debug/37706zn4/obj/armeabi-v7a/libffmpeg_lib.so	d8535fb23475f001
+1	613	1650362410	CMakeFiles/ffmpeg_lib.dir/version.cpp.o	d438d6ab1e915438
+613	697	1650362410	/Users/yz/workspace/performance/MyLive/app/build/intermediates/cxx/Debug/37706zn4/obj/armeabi-v7a/libffmpeg_lib.so	d8535fb23475f001
+1	687	1650362426	CMakeFiles/ffmpeg_lib.dir/version.cpp.o	d438d6ab1e915438
+687	768	1650362426	/Users/yz/workspace/performance/MyLive/app/build/intermediates/cxx/Debug/37706zn4/obj/armeabi-v7a/libffmpeg_lib.so	d8535fb23475f001
+1	626	1650362444	CMakeFiles/ffmpeg_lib.dir/version.cpp.o	d438d6ab1e915438
+0	705	1650362476	CMakeFiles/ffmpeg_lib.dir/version.cpp.o	d438d6ab1e915438
+1	488	1650362488	CMakeFiles/ffmpeg_lib.dir/version.cpp.o	d438d6ab1e915438
+9	979	1650366949	CMakeFiles/ffmpeg_lib.dir/version.cpp.o	d438d6ab1e915438
+980	1143	1650366949	/Users/yz/workspace/performance/MyLive/app/build/intermediates/cxx/Debug/37706zn4/obj/armeabi-v7a/libffmpeg_lib.so	d8535fb23475f001

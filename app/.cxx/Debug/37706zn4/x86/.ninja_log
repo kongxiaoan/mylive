@@ -1,0 +1,13 @@
+# ninja log v5
+0	11	0	clean	f51f87ecc94540f1
+0	492	1649905403	CMakeFiles/mylive.dir/native-lib.cpp.o	66f1245e12dca448
+493	587	1649905403	/Users/yz/workspace/performance/MyLive/app/build/intermediates/cxx/Debug/37706zn4/obj/x86/libmylive.so	5c2c855ae5378cc0
+1	421	1650273043	CMakeFiles/mylive.dir/native-lib.cpp.o	14429758d107c58e
+421	907	1650273044	/Users/yz/workspace/performance/MyLive/app/build/intermediates/cxx/Debug/37706zn4/obj/x86/libmylive.so	fcf449bd7fd15ea5
+0	11	0	clean	f51f87ecc94540f1
+0	60	1650276250	build.ninja	aa1e29b9b1b3cae3
+0	13	0	clean	f51f87ecc94540f1
+0	60	1650277499	build.ninja	aa1e29b9b1b3cae3
+0	12	0	clean	f51f87ecc94540f1
+0	77	1650277857	build.ninja	aa1e29b9b1b3cae3
+0	14	0	clean	f51f87ecc94540f1

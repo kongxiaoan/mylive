@@ -3,10 +3,24 @@ package com.kpa.mylive
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.material.rememberScaffoldState
+import androidx.compose.runtime.*
+import androidx.compose.ui.viewinterop.AndroidViewBinding
+import androidx.core.view.WindowCompat
+import com.google.accompanist.insets.ProvideWindowInsets
+import com.kpa.mylive.components.MyLiveScaffold
+import com.kpa.mylive.main.BackPressHandler
+import com.kpa.mylive.main.LocalBackPressedDispatcher
+import com.kpa.mylive.data.DrawerData
 import com.kpa.mylive.databinding.ActivityMainBinding
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+    private val viewModel: MainViewModel by viewModels()
 
     private lateinit var binding: ActivityMainBinding
 
@@ -17,11 +31,55 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        /**
+         * 设置全屏布局
+         */
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        setContent {
+            ProvideWindowInsets(consumeWindowInsets = false) {
+                CompositionLocalProvider(
+                    LocalBackPressedDispatcher provides this.onBackPressedDispatcher
+                ) {
+                    val rememberScaffoldState = rememberScaffoldState()
+                    val drawerOpen by viewModel.drawerShouldBeOpened.collectAsState()
+                    if (drawerOpen) {
+                        LaunchedEffect(Unit) {
+                            rememberScaffoldState.drawerState.open()
+                            viewModel.resetOpenDrawerAction()
+                        }
+                    }
+
+                    val scope = rememberCoroutineScope()
+                    if (rememberScaffoldState.drawerState.isOpen) {
+                        BackPressHandler {
+                            scope.launch {
+                                rememberScaffoldState.drawerState.close()
+                            }
+                        }
+                    }
+
+                    MyLiveScaffold(
+                        rememberScaffoldState,
+                        onItemClicked = {
+                            when {
+                                it == DrawerData.ffmpeg_version -> {
+                                    VersionActivity.startVersionActivity(this)
+                                }
+                            }
+                        }
+                    ) {
+                        AndroidViewBinding(ActivityMainBinding::inflate)
+                    }
+                }
+
+            }
+        }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Example of a call to a native method
-        binding.sampleText.text = "当前版本 ：" + getFFmpegVersion()
+//        // Example of a call to a native method
+//        binding.sampleText.text = "当前版本 ：" + getFFmpegVersion()
         /** 1\. Java 数据传递给 native  */
 //        test(
 //            true,
@@ -106,5 +164,9 @@ class MainActivity : AppCompatActivity() {
             count++
             Log.d("Java", "count " + count)
         }
+    }
+
+    fun getFFmpegVersion(view: View) {
+        VersionActivity.startVersionActivity(this)
     }
 }
