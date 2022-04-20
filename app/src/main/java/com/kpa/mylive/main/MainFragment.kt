@@ -43,7 +43,7 @@ class MainFragment : Fragment() {
                 MyLiveTheme {
                     MainContent(
                         uiState = exampleUiState,
-                        onNavIconPressed = {
+                        navigateToDrawer = {
                             activityViewModel.openDrawer()
                         },
                         modifier = Modifier.navigationBarsPadding(bottom = false)

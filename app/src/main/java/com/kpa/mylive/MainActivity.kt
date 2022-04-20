@@ -11,6 +11,8 @@ import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.*
 import androidx.compose.ui.viewinterop.AndroidViewBinding
 import androidx.core.view.WindowCompat
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.kpa.mylive.components.MyLiveScaffold
 import com.kpa.mylive.main.BackPressHandler
@@ -75,8 +77,8 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+//        binding = ActivityMainBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
 
 //        // Example of a call to a native method
 //        binding.sampleText.text = "当前版本 ：" + getFFmpegVersion()
@@ -145,6 +147,19 @@ class MainActivity : AppCompatActivity() {
         init {
             System.loadLibrary("ffmpeg_lib")
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController().navigateUp() || super.onSupportNavigateUp()
+    }
+
+    /**
+     * See https://issuetracker.google.com/142847973
+     */
+    private fun findNavController(): NavController {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.main_fragment) as NavHostFragment
+        return navHostFragment.navController
     }
 
     var count = 0
